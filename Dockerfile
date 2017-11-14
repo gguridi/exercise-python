@@ -18,15 +18,8 @@ RUN apt-get update && apt-get install -y \
 # Add node source repository to install the latest version
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
-# Preconfigure mysql client & server
-RUN echo 'mysql-server mysql-server/root_password password testpwd' | debconf-set-selections
-RUN echo 'mysql-server mysql-server/root_password_again password testpwd' | debconf-set-selections
-
 # Install basic tools
 RUN apt-get update && apt-get install -y \
-  mysql-server \
-  mysql-client \
-  libmysqlclient-dev \
   python-pip \
   python-dev \
   nodejs
