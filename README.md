@@ -50,37 +50,11 @@ Usually it's not recommended to write the API documentation in the README.md fil
 are better tools to generate documentation from the code, but in this case we will do
 an exception.
 
-There are some endpoints created around students administration:
+There are some endpoints created around students administration. A postman export has
+been added to the repository (postman-tests.json) to be able to test it.
 
-1. List students information
-
-```
-GET http://localhost/students
-```
-
-2. List specific user information:
-
-```
-GET http://localhost/student/<student-id>
-```
-
-3. Create a new user
-
-```
-POST http://localhost/student with form-data fields name, surname and birthdate
-```
-
-4. Update an existing user
-
-```
-PUT http://localhost/student/<student-id> with form-data fields name, surname and birthdate
-```
-
-5. Delete an existing user
-
-```
-DELETE http://localhost/student/<student-id>
-```
+That file can be imported in the [Postman extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) 
+of chrome to be able to execute HTTP requests to the endpoints.
 
 ## Testing
 
@@ -117,7 +91,7 @@ The dependencies of nodejs are usually installed inside a folder called node_mod
 To run the tests first we have to connect with the container. And then execute:
 
 ```
-cd /storage/app
+cd /storage/app/test_api
 ./node_modules/jasmine-node/bin/jasmine-node . --verbose
 ```
 
@@ -128,6 +102,12 @@ Several improvements can be done to the code:
 - Create a Response class that wraps any response from our webservice, so the
 format is consistent across any endpoint (status, message, etc. might be
 something present at all of them).
+- Create a route (endpoint) that returns the number of students currently
+available in the system.
+- Create a route (endpoint) that returns the list of students ordered by the 
+birthdate. A parameter can be sent to specify if the oldest one comes first or the
+youngest one instead. Choose one behaviour as default if the parameter is not specified.
+- Create a test for the above behaviours.
 
 ## Contributors
 
