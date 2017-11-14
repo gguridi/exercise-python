@@ -1,0 +1,110 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Exercise",
+		"_postman_id": "fc6bc2ed-4cda-597f-854e-d5d363087662",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Student",
+			"request": {
+				"url": "http://localhost/student",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Gorka",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Guridi",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "birthdate",
+							"value": "15/04/1982",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student",
+			"request": {
+				"url": "http://localhost/student/12852676950302773932",
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Gorka",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Guridi",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "birthdate",
+							"value": "15/04/1983",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"url": "http://localhost/student/12852676950302773932",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "List Students",
+			"request": {
+				"url": "http://localhost/students",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Healthcheck",
+			"request": {
+				"url": "http://localhost/healthcheck",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
